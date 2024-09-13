@@ -1,89 +1,51 @@
-import React, { Component } from "react";
-import { Icon } from "@iconify/react";
-import angularIcon from "@iconify/icons-logos/angular-icon";
-import reactIcon from "@iconify/icons-logos/react";
-import vueIcon from "@iconify/icons-logos/vue";
+import React, { Component } from 'react';
+import { Icon } from '@iconify/react';
+import angularIcon from '@iconify/icons-logos/angular-icon';
+import reactIcon from '@iconify/icons-logos/react';
+import vueIcon from '@iconify/icons-logos/vue';
+import './About.css'; // Import the CSS file
 
 class About extends Component {
   render() {
-    if (this.props.sharedBasicInfo) {
-      var profilepic = "images/" + this.props.sharedBasicInfo.image;
-    }
-    if (this.props.resumeBasicInfo) {
-      var sectionName = this.props.resumeBasicInfo.section_name.about;
-      var hello = this.props.resumeBasicInfo.description_header;
-      var about = this.props.resumeBasicInfo.description;
-    }
+    const { sharedBasicInfo, resumeBasicInfo } = this.props;
+
+    const profilepic = sharedBasicInfo ? `images/${sharedBasicInfo.image}` : 'https://iconscout.com/illustrations/female-profile';
+    const sectionName = resumeBasicInfo ? resumeBasicInfo.section_name.about : 'About Me';
+
+    // Contact Information
+    const contactInfo = {
+      email: 'example@example.com',
+      phone: '+1234567890',
+      linkedin: 'https://www.linkedin.com/in/yourprofile',
+      github: 'https://github.com/yourusername'
+    };
 
     return (
       <section id="about">
-        <div className="col-md-12">
-          <h1 style={{ color: "black" }}>
-            <span>{sectionName}</span>
-          </h1>
-          <div className="row center mx-auto mb-5">
-            <div className="col-md-4 mb-5 center">
-              <div className="polaroid">
-                <span style={{ cursor: "auto" }}>
-                  <img
-                    height="250px"
-                    src={profilepic}
-                    alt="Avatar placeholder"
-                  />
-                  <Icon
-                    icon={angularIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={reactIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                  <Icon
-                    icon={vueIcon}
-                    style={{ fontSize: "400%", margin: "9% 5% 0 5%" }}
-                  />
-                </span>
+        <div className="about-container">
+          <h1 className="section-title">{sectionName}</h1>
+          <div className="about-content">
+            <div className="profile-section">
+              <img
+                className="profile-pic"
+                src={profilepic}
+                alt="Profile"
+              />
+              <div className="tech-icons">
+                <Icon icon={angularIcon} className="tech-icon" />
+                <Icon icon={reactIcon} className="tech-icon" />
+                
               </div>
             </div>
-
-            <div className="col-md-8 center">
-              <div className="col-md-10">
-                <div className="card">
-                  <div className="card-header">
-                    <span
-                      className="iconify"
-                      data-icon="emojione:red-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:yellow-circle"
-                      data-inline="false"
-                    ></span>{" "}
-                    &nbsp;{" "}
-                    <span
-                      className="iconify"
-                      data-icon="twemoji:green-circle"
-                      data-inline="false"
-                    ></span>
-                  </div>
-                  <div
-                    className="card-body font-trebuchet text-justify ml-3 mr-3"
-                    style={{
-                      height: "auto",
-                      fontSize: "132%",
-                      lineHeight: "200%",
-                    }}
-                  >
-                    <br />
-                    <span className="wave">{hello} :) </span>
-                    <br />
-                    <br />
-                    {about}
-                  </div>
-                </div>
-              </div>
+            <div className="contact-section">
+              <h2>Contact Me</h2>
+              <p>If you'd like to get in touch, feel free to reach out via email or connect with me on LinkedIn or GitHub.</p>
+              <ul className="contact-list">
+                <li>Email: <a href={`mailto:${contactInfo.email}`}>{contactInfo.email}</a></li>
+                <li>Phone: <a href={`tel:${contactInfo.phone}`}>{contactInfo.phone}</a></li>
+                <li>LinkedIn: <a href={contactInfo.linkedin} target="_blank" rel="noopener noreferrer">{contactInfo.linkedin}</a></li>
+                <li>GitHub: <a href={contactInfo.github} target="_blank" rel="noopener noreferrer">{contactInfo.github}</a></li>
+              </ul>
             </div>
           </div>
         </div>

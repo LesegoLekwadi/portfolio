@@ -1,0 +1,83 @@
+/* Project.css */
+
+/* Container for the project section */
+#projects {
+    padding: 2rem;
+    background-color: #282c34; /* Dark background for contrast */
+  }
+  
+  /* Container for the list of projects */
+  .project-list {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line if needed */
+    gap: 1.5rem; /* Space between project items */
+    justify-content: center; /* Center the items */
+  }
+  
+  /* Individual project item styling */
+  .project-item {
+    background-color: #1e1e1e; /* Slightly different dark background for each project */
+    border: 1px solid #444; /* Slightly lighter border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slightly stronger shadow for depth */
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 300px; /* Limit the width of each project item */
+    flex: 1 1 auto; /* Allow items to grow and shrink as needed */
+  }
+  
+  /* Project image styling */
+  .project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+  }
+  
+  /* Project title styling */
+  .project-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #ffffff; /* White text color for the title */
+  }
+  
+  /* Project description styling */
+  .project-item p {
+    margin: 0 0 1rem;
+    color: #dcdcdc; /* Light grey text color for description */
+    text-align: center;
+  }
+  
+  /* Technologies list styling */
+  .technologies {
+    list-style: none;
+    padding: 0;
+    margin: 0.5rem 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  /* Individual technology tag styling */
+  .technologies li {
+    background-color: #333; /* Darker background for tech tags */
+    padding: 0.3rem 0.6rem;
+    border-radius: 3px;
+    color: #e9ecef; /* Light text color for tags */
+  }
+  
+  /* Project links styling */
+  .project-item a {
+    color: #007bff; /* Blue color for links */
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  /* Hover and focus states for links */
+  .project-item a:hover,
+  .project-item a:focus {
+    text-decoration: underline; /* Underline on hover/focus */
+  }
+  

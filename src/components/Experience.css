@@ -1,0 +1,49 @@
+/* Experience.css */
+
+/* Container for the experience section */
+#experience {
+    padding: 2rem;
+    background-color: #282c34;/* Light gray background for contrast */
+    border-top: 1px solid #ddd; /* Top border for separation */
+  
+  }
+  
+  .experience-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    
+  }
+  
+  .experience-item {
+    background-color: #282c34;/* White background for each experience item */
+    border: 1px solid #dddddd35; /* Light border for separation */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* Space between icon and text */
+  }
+  
+  .experience-icon {
+    font-size: 2rem; /* Larger icon size */
+    color: #007bff; /* Blue color for the icon */
+  }
+  
+  .experience-item h3 {
+    margin: 0 0 0.5rem;
+    font-size: 1.5rem;
+    color: #ffffff; /* Dark text color for headings */
+  }
+  
+  .experience-item p {
+    margin: 0.5rem 0;
+    color: #ffffff; /* Medium text color for description */
+  }
+  
+  .experience-item p strong {
+    color: #ffffff; /* Darker color for company name */
+    text-align: center; /* Center text horizontally */
+  }
+  
