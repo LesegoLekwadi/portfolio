@@ -3,6 +3,7 @@ import About from './components/About'; // Ensure this path matches your file st
 import './App.css'; // Your custom styles
 import Experience from './components/Experience';
 import Project from './components/Projects';
+import Skills from './components/Skills';
 
 function App() {
   // Example data to be passed as props
@@ -26,12 +27,15 @@ function App() {
         <button className="contact-button">Contact Me</button>
       </header>
       
-      <Experience/>
-      <Project/>
+    
+     
       <About
         sharedBasicInfo={sharedBasicInfo}
         resumeBasicInfo={resumeBasicInfo}
       />
+       <Project/>
+       <Skills/>
+       <Experience/>
     </div>
   );
 }
